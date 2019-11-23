@@ -154,9 +154,9 @@ func parse(textarea string) (res string, err error) {
 
 	report := Report{
 		Date:                    now.Format("2006-01-02"),                                                                                                    //日期
-		MonthGoal:               fmt.Sprintf("%.2f亿", monthgoal/10000),                                                                                        //月目标
-		DaySell:                 fmt.Sprintf("%.2f万(%.2f%%)", (daySold), daySold/monthgoal*100),                                                               //日销售
-		MonthSell:               fmt.Sprintf("%.2f万", monthSold),                                                                                             //月销售
+		MonthGoal:               fmt.Sprintf("%.0f亿", monthgoal/10000),                                                                                        //月目标
+		DaySell:                 fmt.Sprintf("%.0f万(%.2f%%)", (daySold), daySold/monthgoal*100),                                                               //日销售
+		MonthSell:               fmt.Sprintf("%.0f万", monthSold),                                                                                             //月销售
 		CmlRate:                 fmt.Sprintf("%.2f%%", CmlRate*100),                                                                                          // string //完成率
 		Diff:                    fmt.Sprintf("%.2f%%", diff*100),                                                                                             //string //差异
 		TurnOverRate:            fmt.Sprintf("%.2f%% (%d/%d)", turnoverCml/turnoverGoal*100, int(turnoverCml), int(turnoverGoal)),                            //string //成交率
@@ -165,7 +165,7 @@ func parse(textarea string) (res string, err error) {
 		BookingComeTurnOverRate: fmt.Sprintf("%.2f%%(%.0f/%.0f)", bookingcometurnover1/bookingcometurnover2*100, bookingcometurnover1, bookingcometurnover2), //预约到店成交率                                   //预约到店成交率
 		DayFansAddition:         fmt.Sprintf("%d", int(dayfansAddtion)),                                                                                      // string //今日新增微粉
 		MonthFansAddition:       fmt.Sprintf("%d", int(monthfansAddtion)),                                                                                    //string //本月新增微粉
-		MonthFansAndMony:        fmt.Sprintf("%+v/%+v  (占比 %.2f%%)", monthfans1, monthfas2, monthfas2/monthSold*100),                                         //string //本月微粉成交单数/金额
+		MonthFansAndMony:        fmt.Sprintf("%.0f/%.0f  (占比 %.2f%%)", monthfans1, monthfas2, monthfas2/monthSold*100),                                         //string //本月微粉成交单数/金额
 	}
 
 	res = printPart(parts) + "\n\n" + printReport(report)
