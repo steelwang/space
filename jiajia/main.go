@@ -154,8 +154,8 @@ func parse(textarea string) (res string, err error) {
 
 	report := Report{
 		Date:                    now.Format("2006-01-02"),                                                                                                    //日期
-		MonthGoal:               fmt.Sprintf("%+v亿", monthgoal/10000),                                                                                        //月目标
-		DaySell:                 fmt.Sprintf("%+v万(%.2f%%)", (daySold), daySold/monthgoal*100),                                                               //日销售
+		MonthGoal:               fmt.Sprintf("%.2f亿", monthgoal/10000),                                                                                        //月目标
+		DaySell:                 fmt.Sprintf("%.2f万(%.2f%%)", (daySold), daySold/monthgoal*100),                                                               //日销售
 		MonthSell:               fmt.Sprintf("%.2f万", monthSold),                                                                                             //月销售
 		CmlRate:                 fmt.Sprintf("%.2f%%", CmlRate*100),                                                                                          // string //完成率
 		Diff:                    fmt.Sprintf("%.2f%%", diff*100),                                                                                             //string //差异
